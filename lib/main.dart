@@ -44,6 +44,7 @@ class _DicePageState extends State<DicePage> {
                   setState(() {
                     var random= new Random();
                     leftD=random.nextInt(6)+1;
+                    rightD=random.nextInt(6)+1;
                     //leftDice=5;
                    // leftDice = random.nextInt(6) + 1;
                   });
@@ -62,6 +63,7 @@ class _DicePageState extends State<DicePage> {
                   setState(() {
                     var random= new Random();
                     rightD=random.nextInt(6)+1;
+                    leftD=random.nextInt(6)+1;
                   });
 
                   //rightDice=6;
