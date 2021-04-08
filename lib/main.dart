@@ -27,6 +27,16 @@ class _DicePageState extends State<DicePage> {
   //var leftDice = random.nextInt(6) + 1;
   var leftD =1 ;
   var rightD=2;
+
+  void changeState(){
+    setState(() {
+      var random= new Random();
+      leftD=random.nextInt(6)+1;
+      rightD=random.nextInt(6)+1;
+      //leftDice=5;
+      // leftDice = random.nextInt(6) + 1;
+    });
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -41,13 +51,7 @@ class _DicePageState extends State<DicePage> {
               padding: const EdgeInsets.all(16.0),
               child: FlatButton(
                 onPressed: () {
-                  setState(() {
-                    var random= new Random();
-                    leftD=random.nextInt(6)+1;
-                    rightD=random.nextInt(6)+1;
-                    //leftDice=5;
-                   // leftDice = random.nextInt(6) + 1;
-                  });
+                  changeState();
                 },
                 child: Image.asset('images/dice$leftD.png'),
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
@@ -60,12 +64,7 @@ class _DicePageState extends State<DicePage> {
               padding: const EdgeInsets.all(16.0),
               child: FlatButton(
                 onPressed: () {
-                  setState(() {
-                    var random= new Random();
-                    rightD=random.nextInt(6)+1;
-                    leftD=random.nextInt(6)+1;
-                  });
-
+                  changeState();
                   //rightDice=6;
                 },
                 child: Image.asset('images/dice$rightD.png'),
